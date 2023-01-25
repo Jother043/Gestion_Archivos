@@ -1,13 +1,11 @@
 import java.time.format.DateTimeFormatter;
 
-public class FicherosEjecutable extends Fichero{
+public class FicherosEjecutable extends FicherosBinario{
 
-    private byte[] contido;
     private int permisos;
 
-    public FicherosEjecutable(String name, double size, DateTimeFormatter date, byte[] contido, int permisos) {
-        super(name, size, date);
-        this.contido = contido;
+    public FicherosEjecutable(String name, double size, DateTimeFormatter date, byte[] contenido, int permisos) throws ErrorFicheroException {
+        super(name, size, date, contenido);
         this.permisos = permisos;
     }
 }

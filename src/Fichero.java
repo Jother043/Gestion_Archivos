@@ -34,6 +34,10 @@ public abstract class Fichero{
         return size;
     }
 
+    public DateTimeFormatter getDate() {
+        return date;
+    }
+
     public final void information() {
         System.out.println("Fichero");
         System.out.println("1. tamaño Fichero: " + getSize());
