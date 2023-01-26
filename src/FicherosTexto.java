@@ -1,27 +1,35 @@
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
-public class FicherosTexto extends Fichero implements Leible {
+public abstract class FicherosTexto extends Fichero implements Leible {
 
     private String[] contenido;
 
-    public FicherosTexto(String name, double size, DateTimeFormatter date, String[] contenido) throws ErrorFicheroException {
-        super(name, size, date);
-        contenido = new String[30];
+    public FicherosTexto(String name, DateTimeFormatter date, String[] contenido) throws ErrorFicheroException {
+        super(name, devolverTamaño(contenido), date);
+        this.contenido = contenido;
     }
 
+    private static int devolverTamaño(String[] contenido){
+        int tamaño = 0;
+        for(String c : contenido){
+            tamaño += c.length();
+        }
+        return tamaño;
+//        return Arrays.stream(contenido).reduce(String :: concat).get().length();
+    }
     public String[] getContenido() {
         return contenido;
     }
 
     @Override
-    public String conversoresDeTexroAudio(String[] contenido, String texto) {
-        for (int i = 0; i < contenido.length; i++){
-            if(contenido[i] != null){
-                contenido[i] = texto;
-            }
+    public String conversoresDeTexroAudio() {
+        StringBuilder cadenaTotal = new StringBuilder();
+        for(String c : contenido){
+            cadenaTotal.append(c);
         }
 
-        return null;
+        return cadenaTotal.toString();
     }
 
 }

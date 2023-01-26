@@ -3,16 +3,16 @@ import java.time.format.DateTimeFormatter;
 public abstract class Fichero{
 
     private String name;
-    private double size;
+    private long size;
     private DateTimeFormatter date;
 
-    public Fichero(String name, double size, DateTimeFormatter date) throws ErrorFicheroException {
+    public Fichero(String name, long size, DateTimeFormatter date) throws ErrorFicheroException {
         this.setName(name);
         this.setSize(size);
         this.date = date;
     }
 
-    private void setSize(double size) throws ErrorFicheroException {
+    private void setSize(long size) throws ErrorFicheroException {
         if(size <= 0){
             throw new ErrorFicheroException("El fichero no puede dar un tamaño igual a cero o inferior. ");
         }

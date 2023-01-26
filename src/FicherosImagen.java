@@ -5,7 +5,7 @@ public class FicherosImagen extends FicherosBinario{
         JPG, PNG, GIF
     }
 
-    public FicherosImagen(String name, double size, DateTimeFormatter date, byte[] contenido) throws ErrorFicheroException {
-        super(name, size, date, contenido);
+    public FicherosImagen(String name, DateTimeFormatter date, byte[] contenido) throws ErrorFicheroException {
+        super(name, date, contenido);
     }
 }

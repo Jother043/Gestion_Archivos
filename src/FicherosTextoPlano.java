@@ -3,8 +3,8 @@ import java.util.Arrays;
 
 public class FicherosTextoPlano extends FicherosTexto implements Representable{
 
-    public FicherosTextoPlano(String name, double size, DateTimeFormatter date, String[] contenido) throws ErrorFicheroException {
-        super(name, size, date, contenido);
+    public FicherosTextoPlano(String name, DateTimeFormatter date, String[] contenido) throws ErrorFicheroException {
+        super(name, date, contenido);
     }
 
     @Override

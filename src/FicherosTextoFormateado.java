@@ -9,8 +9,8 @@ public class FicherosTextoFormateado extends FicherosTexto{
     private int sizeFont;
     private String colorFont;
 
-    public FicherosTextoFormateado(String name, double size, DateTimeFormatter date, String[] contenido, int sizeFont, String colorFont) {
-        super(name, size, date, contenido);
+    public FicherosTextoFormateado(String name, DateTimeFormatter date, String[] contenido, int sizeFont, String colorFont) throws ErrorFicheroException {
+        super(name, date, contenido);
         this.sizeFont = sizeFont;
         this.colorFont = colorFont;
     }
